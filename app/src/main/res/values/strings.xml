@@ -7,4 +7,9 @@
     <string name="login">Login</string>
     <string name="guest">Guest</string>
     <string name="register">Register</string>
+    <string name="name">Name :</string>
+    <string name="surnanme">Surname :</string>
+    <string name="address">Address :</string>
+    <string name="email">Email :</string>
+    <string name="save">Save Data :</string>
 </resources>
