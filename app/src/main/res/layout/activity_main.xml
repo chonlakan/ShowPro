@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="appewtc.masterung.showpro.MainActivity"
-    android:background="@drawable/bg9">
+    tools:context="appewtc.masterung.showpro.MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -68,6 +67,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="clickRegister"
             android:text="@string/register"
             android:id="@+id/button3"
             android:layout_weight="1" />
