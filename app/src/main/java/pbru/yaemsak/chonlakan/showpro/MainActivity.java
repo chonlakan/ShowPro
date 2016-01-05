@@ -5,9 +5,17 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Explicit
+    private ManagTABLE objManagTABLE;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-}
+
+        //connected database
+        objManagTABLE= new ManagTABLE(this);
+
+    }//main method
+}// Main class
