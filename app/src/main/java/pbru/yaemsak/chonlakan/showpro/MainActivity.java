@@ -15,7 +15,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //connected database
-        objManagTABLE= new ManagTABLE(this);
+        objManagTABLE = new ManagTABLE(this);
+
+        //Test add value
+        testAddValue();
 
     }//main method
+
+    private void testAddValue() {
+        objManagTABLE.addNewValueToUser("testUser", "testPassword","testName","testSurname","testAddress","testEmail","testPoint");
+    }
+
+
 }// Main class
