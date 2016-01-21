@@ -51,8 +51,8 @@ public class RegisterActivity extends AppCompatActivity {
         if (checkSpace()) {
             //Have Space
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();
-            objMyAlertDialog.myDialog(RegisterActivity.this, R.drawable.icon_question,
-                    "มีช่องว่าง", "กรุณากรอกข้อมูลให้ครบทุกช่อง");
+            objMyAlertDialog.myDialog(RegisterActivity.this, R.drawable.icon_question,"กรุณาอย่ามีช่องว่าง"
+                    ,"กรุณากรอกข้อมูลให้ครบทุกช่อง");
 
         } else {
             // No Space
@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void confirmRegister() {
         AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
         objBuilder.setIcon(R.drawable.icon_myaccount);
-        objBuilder.setTitle("โปรดตรวจสอบข้อมูล");
+        objBuilder.setTitle("โปรดตรวจสอบข้อมูลอีกครั้ง");
         objBuilder.setMessage("User = " + userString + "\n" +
                 "Password = " + passwordString + "\n" +
                 "Name = " + nameString + "\n" +
@@ -95,7 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void updateToMySQL() {
 
         StrictMode.ThreadPolicy myPolicy = new StrictMode.ThreadPolicy.Builder()
-                .permitAll().build();//กำหนด permission ให้เข้าถึงได้ทุก โปรโตคอล
+                .permitAll().build();                                   //ปลดล็อค permission ให้เข้าถึงได้ทุก โปรโตคอล
         StrictMode.setThreadPolicy(myPolicy);
 
         try {
