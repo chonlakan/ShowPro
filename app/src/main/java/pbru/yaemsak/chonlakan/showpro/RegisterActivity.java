@@ -48,11 +48,11 @@ public class RegisterActivity extends AppCompatActivity {
         addressString = addressEditText.getText().toString().trim();
         emailString = emailEditText.getText().toString().trim();
 
-        if (checkSpace()) {
+        if (checkSpace() || checkUser() ) {
             //Have Space
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();
-            objMyAlertDialog.myDialog(RegisterActivity.this, R.drawable.icon_question,"กรุณาอย่ามีช่องว่าง"
-                    ,"กรุณากรอกข้อมูลให้ครบทุกช่อง");
+            objMyAlertDialog.myDialog(RegisterActivity.this, R.drawable.icon_question,"มีช่องว่างหรือ user ซ้ำ"
+                    ,"กรุณากรอกข้อมูลให้ครบทุกช่อง หรือ user ซ้ำ");
 
         } else {
             // No Space
@@ -61,6 +61,22 @@ public class RegisterActivity extends AppCompatActivity {
         }  //if
 
     }//click save data
+
+    private boolean checkUser() {
+
+        boolean bolstatus;
+        try {
+            ManagTABLE objManagTABLE = new ManagTABLE(this);
+            String[] myResultStrings = objManagTABLE.searchUser(userString);
+            bolstatus = true;
+
+        } catch (Exception e) {
+            bolstatus = false;
+        }
+
+
+        return bolstatus;
+    }//เช็ค user ว่าซ้ำหรือไม่
 
     private void confirmRegister() {
         AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
@@ -119,7 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                     "อัพโหลดได้แล้ว",
                     "ข้อมูลได้ขึ้นบน server เรียบร้อยแล้ว");
 
-            finish();// เมื่อกด confirm จะกลับมาหน้า แรก
+            finish();// เมื่อกด confirm จะกลับมาหน้า Login
 
         } catch (Exception e) {
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();

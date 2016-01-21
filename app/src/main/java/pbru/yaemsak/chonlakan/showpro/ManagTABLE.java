@@ -2,6 +2,7 @@ package pbru.yaemsak.chonlakan.showpro;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -43,26 +44,62 @@ public class ManagTABLE {
 
     }//Constructor
 
-        public long addNewValueToPromotion(String strPromotion,
-                                           String strCondition,
-                                           String strTimeStart,
-                                           String strTimeEnd,
-                                           String strPlace,
-                                           String strLat,
-                                           String strLng,
-                                           String strReward) {
-            ContentValues objContentValues = new ContentValues();
-            objContentValues.put(COLUMN_NamePromotion, strPromotion);
-            objContentValues.put(COLUMN_Condition, strCondition);
-            objContentValues.put(COLUMN_TimeStart, strTimeStart);
-            objContentValues.put(COLUMN_TimeEnd, strTimeEnd);
-            objContentValues.put(COLUMN_Place, strPlace);
-            objContentValues.put(COLUMN_Lat, strLat);
-            objContentValues.put(COLUMN_Lng,strLng);
-            objContentValues.put(COLUMN_Reward,strReward);
-    //Add
-            return WritSqLiteDatabase.insert(TABLE_promotion,null,objContentValues);
+    public String[] searchUser(String strUser) {
+        try {
+
+            String[] resultStrings = null;
+            Cursor objCursor = readSqLiteDatabase.query(TABLE_USER,
+                    new String[]{COLUMN_id, COLUMN_User, COLUMN_Password,
+                            COLUMN_Name, COLUMN_Surname, COLUMN_Address,
+                            COLUMN_Email, COLUMN_Point},
+                    COLUMN_User + "=?",
+                    new String[]{String.valueOf(strUser)},
+                    null, null, null, null);
+
+            if (objCursor != null) {
+
+                if (objCursor.moveToFirst()) {
+
+                    resultStrings = new String[objCursor.getColumnCount()];
+                    for (int i = 0; i < objCursor.getColumnCount(); i++) {
+                        resultStrings[i] = objCursor.getString(i);
+                    }
+
+                }//if2
+            }//if
+            objCursor.close();//คืนหน่วยความจำที่เรียกใช้
+            return resultStrings;
+
+
+        } catch (Exception e) {
+            return null;
         }
+
+
+        //return new String[0];
+    }
+
+
+    public long addNewValueToPromotion(String strPromotion,
+                                       String strCondition,
+                                       String strTimeStart,
+                                       String strTimeEnd,
+                                       String strPlace,
+                                       String strLat,
+                                       String strLng,
+                                       String strReward) {
+        ContentValues objContentValues = new ContentValues();
+        objContentValues.put(COLUMN_NamePromotion, strPromotion);
+        objContentValues.put(COLUMN_Condition, strCondition);
+        objContentValues.put(COLUMN_TimeStart, strTimeStart);
+        objContentValues.put(COLUMN_TimeEnd, strTimeEnd);
+        objContentValues.put(COLUMN_Place, strPlace);
+        objContentValues.put(COLUMN_Lat, strLat);
+        objContentValues.put(COLUMN_Lng, strLng);
+        objContentValues.put(COLUMN_Reward, strReward);
+        //Add
+        return WritSqLiteDatabase.insert(TABLE_promotion, null, objContentValues);
+    }
 
     public long addNewValueToUser(String strUser,
                                   String strPassword,
@@ -73,17 +110,16 @@ public class ManagTABLE {
                                   String strPoint) {
 
         ContentValues objContentValues = new ContentValues();
-        objContentValues.put(COLUMN_User,strUser);
+        objContentValues.put(COLUMN_User, strUser);
         objContentValues.put(COLUMN_Password, strPassword);
         objContentValues.put(COLUMN_Name, strName);
         objContentValues.put(COLUMN_Surname, strSurname);
-        objContentValues.put(COLUMN_Address,strAddress);
-        objContentValues.put(COLUMN_Email,strEmail);
-        objContentValues.put(COLUMN_Point,strPoint);
-    //Add
-        return WritSqLiteDatabase.insert(TABLE_USER,null, objContentValues);
+        objContentValues.put(COLUMN_Address, strAddress);
+        objContentValues.put(COLUMN_Email, strEmail);
+        objContentValues.put(COLUMN_Point, strPoint);
+        //Add
+        return WritSqLiteDatabase.insert(TABLE_USER, null, objContentValues);
     }
-
 
 
 }//Main class
