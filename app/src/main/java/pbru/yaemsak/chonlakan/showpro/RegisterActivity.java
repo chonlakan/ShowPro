@@ -1,5 +1,9 @@
 package pbru.yaemsak.chonlakan.showpro;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.location.Address;
+import android.provider.ContactsContract;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,10 +45,40 @@ public class RegisterActivity extends AppCompatActivity {
 
         } else {
             // No Space
+            confirmRegister();
 
         }  //if
 
     }//click save data
+
+    private void confirmRegister() {
+        AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
+        objBuilder.setIcon(R.drawable.icon_myaccount);
+        objBuilder.setTitle("โปรดตรวจสอบข้อมูล");
+        objBuilder.setMessage("User = " + userString + "\n" +
+                "Password = " + passwordString + "\n" +
+                "Name = " + nameString + "\n" +
+                "Surname = " + surnameString + "\n" +
+                "Address = " + addressString + "\n" +
+                "Email = " + emailString);
+
+        objBuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Update to MySQL
+                dialog.dismiss();
+            }
+        });
+        objBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+        objBuilder.show();
+
+    }//ConfirmRegister
 
     private boolean checkSpace() {
         return userString.equals("") ||
