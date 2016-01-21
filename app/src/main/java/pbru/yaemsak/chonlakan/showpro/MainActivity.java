@@ -42,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void testAddValue() {
-        objManagTABLE.addNewValueToUser("testUser", "testPassword","testName","testSurname","testAddress","testEmail","testPoint");
+        objManagTABLE.addNewValueToUser("testUser", "testPassword","testName",
+                "testSurname","testAddress","testEmail","testPoint");
 
-        objManagTABLE.addNewValueToPromotion("Promotion","Condition","Start","End","Place","Lat","Lng","Reward");
+        objManagTABLE.addNewValueToPromotion("Promotion","Condition","Start","End",
+                "Place","Lat","Lng","Reward");
     }
 
 

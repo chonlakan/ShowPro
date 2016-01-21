@@ -11,5 +11,5 @@
     <string name="surnanme">Surname :</string>
     <string name="address">Address :</string>
     <string name="email">Email :</string>
-    <string name="save">Save Data :</string>
+    <string name="save">Save Data</string>
 </resources>

@@ -60,7 +60,7 @@ public class ManagTABLE {
             objContentValues.put(COLUMN_Lat, strLat);
             objContentValues.put(COLUMN_Lng,strLng);
             objContentValues.put(COLUMN_Reward,strReward);
-
+    //Add
             return WritSqLiteDatabase.insert(TABLE_promotion,null,objContentValues);
         }
 
@@ -80,7 +80,7 @@ public class ManagTABLE {
         objContentValues.put(COLUMN_Address,strAddress);
         objContentValues.put(COLUMN_Email,strEmail);
         objContentValues.put(COLUMN_Point,strPoint);
-
+    //Add
         return WritSqLiteDatabase.insert(TABLE_USER,null, objContentValues);
     }
 
