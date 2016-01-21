@@ -3,12 +3,23 @@ package pbru.yaemsak.chonlakan.showpro;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.location.Address;
+import android.os.StrictMode;
 import android.provider.ContactsContract;
+import android.provider.Settings;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.util.ArrayList;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -66,6 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // Update to MySQL
+                updateToMySQL();
                 dialog.dismiss();
             }
         });
@@ -79,6 +91,43 @@ public class RegisterActivity extends AppCompatActivity {
         objBuilder.show();// show data
 
     }//ConfirmRegister
+
+    private void updateToMySQL() {
+
+        StrictMode.ThreadPolicy myPolicy = new StrictMode.ThreadPolicy.Builder()
+                .permitAll().build();//กำหนด permission ให้เข้าถึงได้ทุก โปรโตคอล
+        StrictMode.setThreadPolicy(myPolicy);
+
+        try {
+
+            ArrayList<NameValuePair> objNameValuePairs = new ArrayList<NameValuePair>();
+            objNameValuePairs.add(new BasicNameValuePair("isAdd", "true"));/// ทำตาม PHP
+            objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_User, userString));
+            objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Password, passwordString));
+            objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Name, nameString));
+            objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Surname, surnameString));
+            objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Address, addressString));
+            objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Email, emailString));
+
+            HttpClient objHttpClient = new DefaultHttpClient();
+            HttpPost objHttpPost = new HttpPost("http://swiftcodingthai.com/mac/php_add_data_max.php");
+            objHttpPost.setEntity(new UrlEncodedFormEntity(objNameValuePairs,"UTF-8"));
+            objHttpClient.execute(objHttpPost);
+
+            MyAlertDialog obj2MyAlertDialog = new MyAlertDialog();
+            obj2MyAlertDialog.myDialog(RegisterActivity.this,R.drawable.icon_myaccount,
+                    "อัพโหลดได้แล้ว",
+                    "ข้อมูลได้ขึ้นบน server เรียบร้อยแล้ว");
+
+            finish();// เมื่อกด confirm จะกลับมาหน้า แรก
+
+        } catch (Exception e) {
+            MyAlertDialog objMyAlertDialog = new MyAlertDialog();
+            objMyAlertDialog.myDialog(RegisterActivity.this,R.drawable.icon_myaccount,
+                    "ไม่สามารถอัพเดตข้อมูลได้",
+                    "เกิดความผิดพลาดไม่สามารถอัพเดตข้อมูลขึ้น Server ได้");
+        }
+    }// update to mySQL
 
     private boolean checkSpace() {
         return userString.equals("") ||
