@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        objBuilder.show();
+        objBuilder.show();// show data
 
     }//ConfirmRegister
 
