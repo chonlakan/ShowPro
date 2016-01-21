@@ -83,6 +83,11 @@ public class MainActivity extends AppCompatActivity {
             //check password
             if (passwordString.equals(myResultString[2])) {
                 //password True
+                Intent objIntent = new Intent(MainActivity.this, ServiceActivity.class);
+                objIntent.putExtra("Result", myResultString);
+                startActivity(objIntent);
+
+
             } else {
                 //password False
                 MyAlertDialog objMyAlertDialog = new MyAlertDialog();
