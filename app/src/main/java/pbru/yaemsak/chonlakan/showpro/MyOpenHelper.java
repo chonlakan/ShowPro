@@ -7,12 +7,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Chonlakan on 5/1/2559.
  */
-public class MyOpenHelper extends SQLiteOpenHelper{
+public class MyOpenHelper extends SQLiteOpenHelper {
 
     //Explicit
-    public static final  String DATABASE_NAME = "ShowPro.db";
-    private  static  final int DATABASE_VERSION = 1;
-    private  static  final  String CREATE_USER_TABLE = "create table userTABLE (" +
+    public static final String DATABASE_NAME = "ShowPro.db";
+    private static final int DATABASE_VERSION = 1;
+    private static final String CREATE_USER_TABLE = "create table userTABLE (" +
             "_id integer primary key, " +
             "User text," +
             "Password text," +
@@ -21,7 +21,7 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "Address text," +
             "Email text," +
             "Point text);";
-    private static  final  String CREATE_PROMOTION_TABLE = "create table promotionTABLE(" +
+    private static final String CREATE_PROMOTION_TABLE = "create table promotionTABLE(" +
             "_id integer primary key," +
             "NamePromotion text," +
             "Condition text," +
@@ -32,7 +32,13 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "Lng text," +
             "Reward text);";
 
-    public MyOpenHelper(Context context ) {
+    private static final String CREATE_REWARD_TABLE = "create table rewardTABLE(" +
+            "_id integer primary key," +
+            "Reward_Name text," +
+            "Use_Point text);";
+
+
+    public MyOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
     }// Constructor
@@ -41,6 +47,7 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
         db.execSQL(CREATE_PROMOTION_TABLE);
+        db.execSQL(CREATE_REWARD_TABLE);
     }
 
     @Override
