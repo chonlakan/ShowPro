@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             String[] myResultString = objManagTABLE.searchUser(userString);
-            Log.d("ShowPro", "Welcom ==>" + myResultString[3]);
+            Log.d("ShowPro", "Welcome ==>" + myResultString[3]);
 
             //check password
             if (passwordString.equals(myResultString[2])) {
