@@ -33,6 +33,10 @@ public class ManagTABLE {
     public static final String COLUMN_Lng = "Lng";
     public static final String COLUMN_Reward = "Reward";
 
+    public static final String TABLE_REWARD = "rewardTABLE";
+    public static final String COLUMN_Reward_Name = "Reward_Name";
+    public static final String COLUMN_Use_Point = "Use_Point";
+
 
     public ManagTABLE(Context context) {
 
@@ -43,6 +47,16 @@ public class ManagTABLE {
 
 
     }//Constructor
+
+    public long addReward(String strRewardName,
+                          String strUsePoint) {
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_Reward_Name, strRewardName);
+        contentValues.put(COLUMN_Use_Point, strUsePoint);
+
+        return WritSqLiteDatabase.insert(TABLE_REWARD, null, contentValues);
+    }
 
     public String[] searchUser(String strUser) {
         try {

@@ -120,13 +120,14 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(myThreadPolicy);
 
         int intTimes = 1;
-        while (intTimes <= 2) {
+        while (intTimes <= 3) {//รอบที่วน
 
             //มี3ขั้นตอน
             //1.Create InputStream
             InputStream objInputStream = null;
             String strURLuser = "http://swiftcodingthai.com/mac/php_get_data_max.php";
             String strURLpromote = "http://swiftcodingthai.com/mac/php_get_promot_max.php";
+            String strURLreward = "http://swiftcodingthai.com/mac/php_get_reward_max.php";
             HttpPost objHttpPost = null;
             String tag = "ShowPro";
 
@@ -139,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         objHttpPost = new HttpPost(strURLpromote);
+                        break;
+                    case 3:
+                        objHttpPost = new HttpPost(strURLreward);
                         break;
                 }//Switch
 
@@ -205,6 +209,16 @@ public class MainActivity extends AppCompatActivity {
                                 ,strTimeEnd,strPlace,strLat,strLng,strReward);
 
                         break;
+                    case 3:
+
+                        //for rewardTable
+                        String strRewardName = jsonObject.getString(ManagTABLE.COLUMN_Reward_Name);
+                        String strUserPoint = jsonObject.getString(ManagTABLE.COLUMN_Use_Point);
+                        objManagTABLE.addReward(strRewardName, strUserPoint);
+                        break;
+
+
+
                 }//switch
                 }//for
             } catch (Exception e) {
@@ -228,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 MODE_PRIVATE, null);
         objSqLiteDatabase.delete(ManagTABLE.TABLE_USER,null, null);
         objSqLiteDatabase.delete(ManagTABLE.TABLE_promotion, null, null);
+        objSqLiteDatabase.delete(ManagTABLE.TABLE_REWARD, null, null);
 
     }
 
