@@ -1,5 +1,7 @@
 package pbru.yaemsak.chonlakan.showpro;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -26,13 +28,32 @@ public class ServiceActivity extends AppCompatActivity {
         //Show view
         showView();
 
+        //Create list view
+        createListView();
+
 
     }//main method
+
+    private void createListView() {
+        //connect database
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,MODE_PRIVATE,null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManagTABLE.TABLE_REWARD, null);
+        cursor.moveToFirst();
+        int[] iconInts = new int[cursor.getCount()];
+        String[] nameRewardStrings = new String[cursor.getCount()];
+        String[] pointRewardStrings = new String[cursor.getCount()];
+
+        for (int i = 0; i < cursor.getCount(); i++) {
+
+
+        }
+
+    }//create listview
 
     private void showView() {
 
         String[] resultSting = getIntent().getStringArrayExtra("Result");
-        showNameTextView.setText(resultSting[3] + " "+ resultSting[4]);
+        showNameTextView.setText(resultSting[3] + " " + resultSting[4]);
         showPointTextView.setText(resultSting[7] + " " + "คะแนน");
 
     }//show view
