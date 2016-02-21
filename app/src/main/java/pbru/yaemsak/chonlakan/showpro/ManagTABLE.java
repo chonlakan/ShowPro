@@ -26,6 +26,7 @@ public class ManagTABLE {
     public static final String COLUMN_Point = "Point";
     public static final String COLUMN_NamePromotion = "NamePromotion";
     public static final String COLUMN_Condition = "Condition";
+    public static final String COLUMN_PictPromotion = "PictPromotion";
     public static final String COLUMN_TimeStart = "TimeStart";
     public static final String COLUMN_TimeEnd = "TimeEnd";
     public static final String COLUMN_Place = "Place";
@@ -36,6 +37,7 @@ public class ManagTABLE {
     public static final String TABLE_REWARD = "rewardTABLE";
     public static final String COLUMN_Reward_Name = "Reward_Name";
     public static final String COLUMN_Use_Point = "Use_Point";
+    public static final String COLUMN_Pict_Reward = "Pict_Reward";
 
 
     public ManagTABLE(Context context) {
@@ -49,11 +51,13 @@ public class ManagTABLE {
     }//Constructor
 
     public long addReward(String strRewardName,
+                          String strPictReward,
                           String strUsePoint) {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_Reward_Name, strRewardName);
         contentValues.put(COLUMN_Use_Point, strUsePoint);
+        contentValues.put(COLUMN_Pict_Reward, strPictReward);
 
         return WritSqLiteDatabase.insert(TABLE_REWARD, null, contentValues);
     }
@@ -96,6 +100,7 @@ public class ManagTABLE {
 
     public long addNewValueToPromotion(String strPromotion,
                                        String strCondition,
+                                       String strPictPromotoin,
                                        String strTimeStart,
                                        String strTimeEnd,
                                        String strPlace,
@@ -105,6 +110,7 @@ public class ManagTABLE {
         ContentValues objContentValues = new ContentValues();
         objContentValues.put(COLUMN_NamePromotion, strPromotion);
         objContentValues.put(COLUMN_Condition, strCondition);
+        objContentValues.put(COLUMN_PictPromotion, strPictPromotoin);
         objContentValues.put(COLUMN_TimeStart, strTimeStart);
         objContentValues.put(COLUMN_TimeEnd, strTimeEnd);
         objContentValues.put(COLUMN_Place, strPlace);

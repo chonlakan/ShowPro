@@ -199,14 +199,15 @@ public class MainActivity extends AppCompatActivity {
                         //For promotionTABLE
                             String strPromotion = jsonObject.getString(ManagTABLE.COLUMN_NamePromotion);
                             String strCondition = jsonObject.getString(ManagTABLE.COLUMN_Condition);
+                            String strPictPromotion = jsonObject.getString(ManagTABLE.COLUMN_PictPromotion);
                             String strTimeStart = jsonObject.getString(ManagTABLE.COLUMN_TimeStart);
                             String strTimeEnd = jsonObject.getString(ManagTABLE.COLUMN_TimeEnd);
                             String strPlace = jsonObject.getString(ManagTABLE.COLUMN_Place);
                             String strLat = jsonObject.getString(ManagTABLE.COLUMN_Lat);
                             String strLng = jsonObject.getString(ManagTABLE.COLUMN_Lng);
                             String strReward = jsonObject.getString(ManagTABLE.COLUMN_Reward);
-                        objManagTABLE.addNewValueToPromotion(strPromotion,strCondition,strTimeStart
-                                ,strTimeEnd,strPlace,strLat,strLng,strReward);
+                        objManagTABLE.addNewValueToPromotion(strPromotion,strCondition,strPictPromotion
+                                ,strTimeStart,strTimeEnd,strPlace,strLat,strLng,strReward);
 
                         break;
                     case 3:
@@ -214,7 +215,9 @@ public class MainActivity extends AppCompatActivity {
                         //for rewardTable
                         String strRewardName = jsonObject.getString(ManagTABLE.COLUMN_Reward_Name);
                         String strUserPoint = jsonObject.getString(ManagTABLE.COLUMN_Use_Point);
-                        objManagTABLE.addReward(strRewardName, strUserPoint);
+                        String strPictReward = jsonObject.getString(ManagTABLE.COLUMN_Pict_Reward);
+
+                        objManagTABLE.addReward(strRewardName,strUserPoint,strPictReward);
                         break;
 
 
@@ -250,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
         objManagTABLE.addNewValueToUser("testUser", "testPassword","testName",
                 "testSurname","testAddress","testEmail","testPoint");
 
-        objManagTABLE.addNewValueToPromotion("Promotion","Condition","Start","End",
+        objManagTABLE.addNewValueToPromotion("Promotion","Condition","PictPromotion","Start","End",
                 "Place","Lat","Lng","Reward");
     }
 

@@ -46,14 +46,14 @@ public class ServiceActivity extends AppCompatActivity {
         for (int i = 0; i < cursor.getCount(); i++) {
 
 
-        }
+        } //for
 
-    }//create listview
+    }//create list view
 
     private void showView() {
 
         String[] resultSting = getIntent().getStringArrayExtra("Result");
-        showNameTextView.setText(resultSting[3] + " " + resultSting[4]);
+        showNameTextView.setText("Welcome :" + "  " + resultSting[3] + " " + resultSting[4]);
         showPointTextView.setText(resultSting[7] + " " + "คะแนน");
 
     }//show view
