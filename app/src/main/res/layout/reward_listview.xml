@@ -6,7 +6,7 @@
     <ImageView
         android:layout_width="@dimen/icon"
         android:layout_height="@dimen/icon"
-        android:id="@+id/imageView2"
+        android:id="@+id/imvreward"
         android:layout_margin="15dp" />
 
     <LinearLayout

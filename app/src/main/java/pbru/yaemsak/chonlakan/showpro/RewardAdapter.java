@@ -30,7 +30,7 @@ public class RewardAdapter extends BaseAdapter{
         this.iconStrings = iconStrings;
         this.nameRewardStrings = nameRewardStrings;
         this.pointRewardStrings = pointRewardStrings;
-        this.iconSmallInts = iconSmallInts;
+        this.iconSmallInts = iconSmallInts;//ส่ง
 
     }//constructor
 
@@ -55,7 +55,7 @@ public class RewardAdapter extends BaseAdapter{
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view1 = layoutInflater.inflate(R.layout.reward_listview, viewGroup, false);
 
-        ImageView iconImageView = (ImageView) view.findViewById(R.id.imageView2);
+        ImageView iconImageView = (ImageView) view1.findViewById(R.id.imvreward);
         Picasso.with(context).load(iconStrings[i]).resize(120,120).into(iconImageView);
 
         TextView nameRewardTextView = (TextView) view1.findViewById(R.id.textView12);

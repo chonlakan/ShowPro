@@ -51,8 +51,8 @@ public class ManagTABLE {
     }//Constructor
 
     public long addReward(String strRewardName,
-                          String strPictReward,
-                          String strUsePoint) {
+                          String strUsePoint,
+                          String strPictReward) {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_Reward_Name, strRewardName);
