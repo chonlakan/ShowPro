@@ -215,9 +215,9 @@ public class MainActivity extends AppCompatActivity {
                         //for rewardTable
                         String strRewardName = jsonObject.getString(ManagTABLE.COLUMN_Reward_Name);
                         String strUserPoint = jsonObject.getString(ManagTABLE.COLUMN_Use_Point);
-                        String strPictReward = jsonObject.getString(ManagTABLE.COLUMN_Pict_Reward);
+                        String strPict_Reward = jsonObject.getString(ManagTABLE.COLUMN_Pict_Reward);
 
-                        objManagTABLE.addReward(strRewardName,strUserPoint,strPictReward);
+                        objManagTABLE.addReward(strRewardName,strUserPoint,strPict_Reward);
                         break;
 
 

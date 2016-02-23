@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by chonlakan on 18/2/2559.
  */
@@ -15,17 +17,17 @@ public class RewardAdapter extends BaseAdapter{
 
     //Explicit
     private Context context;
-    private int[] iconInts;
-    private String[] nameRewardStrings,pointRewardStrings;
+
+    private String[] nameRewardStrings,pointRewardStrings, iconStrings;
     private int[] iconSmallInts;
 
     public RewardAdapter(Context context,
-                         int[] iconInts,
+                         String[] iconStrings,
                          String[] nameRewardStrings,
                          String[] pointRewardStrings,
                          int[] iconSmallInts) {
         this.context = context;
-        this.iconInts = iconInts;
+        this.iconStrings = iconStrings;
         this.nameRewardStrings = nameRewardStrings;
         this.pointRewardStrings = pointRewardStrings;
         this.iconSmallInts = iconSmallInts;
@@ -54,7 +56,7 @@ public class RewardAdapter extends BaseAdapter{
         View view1 = layoutInflater.inflate(R.layout.reward_listview, viewGroup, false);
 
         ImageView iconImageView = (ImageView) view.findViewById(R.id.imageView2);
-        iconImageView.setImageResource(iconInts[i]);
+        Picasso.with(context).load(iconStrings[i]).resize(120,120).into(iconImageView);
 
         TextView nameRewardTextView = (TextView) view1.findViewById(R.id.textView12);
         nameRewardTextView.setText(nameRewardStrings[i]);
