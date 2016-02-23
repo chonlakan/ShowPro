@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             //Have Space
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();
             objMyAlertDialog.myDialog(MainActivity.this,
-                    R.drawable.icon_question,"มีช่องว่างครับ","กรุณากรอกให้ครบทุกช่อง");
+                    R.drawable.icon_question,"มีช่องว่างครับ","กรุณากรอกให้ครบทุกช่องครับ");
         } else {
             // NO Space
             checkUser();
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 //password False
                 MyAlertDialog objMyAlertDialog = new MyAlertDialog();
                 objMyAlertDialog.myDialog(MainActivity.this,
-                        R.drawable.icon_myaccount,"Password False","กรุณาลองใหม่อีกครั้ง");
+                        R.drawable.icon_myaccount,"Password False","กรุณาลองใหม่อีกครั้งครับ");
             }
 
 

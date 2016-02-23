@@ -17,12 +17,19 @@ public class RewardAdapter extends BaseAdapter{
     private Context context;
     private int[] iconInts;
     private String[] nameRewardStrings,pointRewardStrings;
+    private int[] iconSmallInts;
 
-    public RewardAdapter(Context context, int[] iconInts, String[] nameRewardStrings, String[] pointRewardStrings) {
+    public RewardAdapter(Context context,
+                         int[] iconInts,
+                         String[] nameRewardStrings,
+                         String[] pointRewardStrings,
+                         int[] iconSmallInts) {
         this.context = context;
         this.iconInts = iconInts;
         this.nameRewardStrings = nameRewardStrings;
         this.pointRewardStrings = pointRewardStrings;
+        this.iconSmallInts = iconSmallInts;
+
     }//constructor
 
     @Override
@@ -54,6 +61,9 @@ public class RewardAdapter extends BaseAdapter{
 
         TextView pointRewardTextView = (TextView) view1.findViewById(R.id.textView13);
         pointRewardTextView.setText(pointRewardStrings[i]);
+
+        ImageView iconSmallImageView = (ImageView)view1.findViewById(R.id.imageView3);
+        iconSmallImageView.setImageResource(iconSmallInts[i]);
 
         return view1;
     }
