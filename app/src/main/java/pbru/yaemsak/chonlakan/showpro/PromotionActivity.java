@@ -29,7 +29,8 @@ public class PromotionActivity extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
                 MODE_PRIVATE, null);
 
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManagTABLE.TABLE_promotion, null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManagTABLE.TABLE_promotion +
+                                                                    " ORDER BY _id DESC", null);
         cursor.moveToFirst();
 
         String[] namePromotion = new String[cursor.getCount()];
@@ -44,6 +45,7 @@ public class PromotionActivity extends AppCompatActivity {
             startPromotion[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_TimeStart));
             endPromotion[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_TimeEnd));
 
+            cursor.moveToNext();
         }//for
         cursor.close();
 

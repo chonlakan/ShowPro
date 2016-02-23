@@ -20,7 +20,8 @@
             android:text="New Text"
             android:id="@+id/textView19"
             android:textSize="@dimen/h2"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="18dp"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,8 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text="Start"
                 android:id="@+id/textView20"
-                android:textSize="@dimen/h2"
-                android:textStyle="bold" />
+                android:textSize="@dimen/h2" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -42,7 +42,8 @@
                 android:id="@+id/textView21"
                 android:textSize="@dimen/h2"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:textColor="#ff4343" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -54,8 +55,7 @@
                 android:layout_height="wrap_content"
                 android:text="End"
                 android:id="@+id/textView22"
-                android:textSize="@dimen/h2"
-                android:textStyle="bold" />
+                android:textSize="@dimen/h2" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,7 +64,8 @@
                 android:id="@+id/textView23"
                 android:textSize="@dimen/h2"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:textColor="#ff4343" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
