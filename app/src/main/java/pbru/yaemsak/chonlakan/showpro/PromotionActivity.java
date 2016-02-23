@@ -39,6 +39,7 @@ public class PromotionActivity extends AppCompatActivity {
         String[] picPromotion = new String[cursor.getCount()];
         String[] startPromotion = new String[cursor.getCount()];
         String[] endPromotion = new String[cursor.getCount()];
+        final String[] idStrings = new String[cursor.getCount()];
 
         for (int i = 0; i < cursor.getCount(); i++) {
 
@@ -46,6 +47,7 @@ public class PromotionActivity extends AppCompatActivity {
             picPromotion[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_PictPromotion));
             startPromotion[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_TimeStart));
             endPromotion[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_TimeEnd));
+            idStrings[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_id));
 
             cursor.moveToNext();//สั่งให้ cursor เลื่อนตำแหน่ง
         }//for
@@ -61,6 +63,7 @@ public class PromotionActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 Intent intent = new Intent(PromotionActivity.this, DetailPromotionActivity.class);
+                intent.putExtra("ID", idStrings[i]);
                 startActivity(intent);
 
             }
