@@ -13,6 +13,7 @@ public class ServiceActivity extends AppCompatActivity {
     //Explicit
     private TextView showNameTextView, showPointTextView;
     private ListView rewardListView;
+    private int myscoreAnInt;
 
 
 
@@ -46,9 +47,11 @@ public class ServiceActivity extends AppCompatActivity {
 
         for (int i = 0; i < cursor.getCount(); i++) {
 
-            iconSmallInts[i] = R.drawable.true2; ////////กลับมาแก้
             nameRewardStrings[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_Reward_Name));
             pointRewardStrings[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_Use_Point));
+
+            iconSmallInts[i] = checkReward(pointRewardStrings[i]);
+
             iconStings[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_Pict_Reward));
 
             cursor.moveToNext();
@@ -61,11 +64,23 @@ public class ServiceActivity extends AppCompatActivity {
 
     }//create list view
 
+    private int checkReward(String pointRewardString) {// เช็คแต้ม
+
+        int intIconSmall = R.drawable.true2;
+
+        if (myscoreAnInt < Integer.parseInt(pointRewardString)) {
+            intIconSmall = R.drawable.false1;
+        }
+
+        return intIconSmall;
+    }
+
     private void showView() {
 
         String[] resultSting = getIntent().getStringArrayExtra("Result");
         showNameTextView.setText("Welcome :" + "  " + resultSting[3] + " " + resultSting[4]);
         showPointTextView.setText(resultSting[7] + " " + "คะแนน");
+        myscoreAnInt = Integer.parseInt(resultSting[7]);
 
     }//show view
 
