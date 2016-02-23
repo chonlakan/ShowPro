@@ -30,7 +30,7 @@ public class PromotionActivity extends AppCompatActivity {
                 MODE_PRIVATE, null);
 
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManagTABLE.TABLE_promotion +
-                                                                    " ORDER BY _id DESC", null);
+                " ORDER BY _id DESC", null);//เรียงลำดับจากข้อมูลใหม่ไปข้อมูลเก่า
         cursor.moveToFirst();
 
         String[] namePromotion = new String[cursor.getCount()];
@@ -45,7 +45,7 @@ public class PromotionActivity extends AppCompatActivity {
             startPromotion[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_TimeStart));
             endPromotion[i] = cursor.getString(cursor.getColumnIndex(ManagTABLE.COLUMN_TimeEnd));
 
-            cursor.moveToNext();
+            cursor.moveToNext();//สั่งให้ cursor เลื่อนตำแหน่ง
         }//for
         cursor.close();
 
