@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,11 +21,20 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
     private GoogleMap mMap;
     private String idString;
     private String[] resultStrings;// ตัวแปลที่จะใช้ข้อมูล cursor 1 แถว listview
+    private TextView namePromoteTextView,
+            placeTextView, startTextView,
+            endTextView, conditionTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_detail_activity);
+
+        //bind widget
+        bindWidget();
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -33,7 +43,27 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         //Receive ID
         receiveID();
 
+        //Show TextView
+        showTextView();
+
+
     }//Main method
+
+    private void showTextView() {
+        namePromoteTextView.setText(resultStrings[1]);
+        placeTextView.setText(resultStrings[6]);
+        startTextView.setText(resultStrings[4]);
+        endTextView.setText(resultStrings[5]);
+        
+    }//show Method
+
+    private void bindWidget() {
+        namePromoteTextView = (TextView) findViewById(R.id.textView24);
+        placeTextView = (TextView) findViewById(R.id.textView25);
+        startTextView = (TextView) findViewById(R.id.textView26);
+        endTextView = (TextView) findViewById(R.id.textView27);
+
+    }//Bind widget
 
     private void receiveID() {
 
