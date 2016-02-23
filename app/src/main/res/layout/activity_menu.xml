@@ -63,7 +63,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/icon" >
+            android:layout_height="@dimen/icon"
+            android:layout_marginTop="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"

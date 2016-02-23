@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                             String strEmail = jsonObject.getString(ManagTABLE.COLUMN_Email);
                             String strPoint = jsonObject.getString(ManagTABLE.COLUMN_Point);
                             objManagTABLE.addNewValueToUser(strUser, strPassword, strName,
-                                                             strSurname, strAddress, strEmail,strPoint);
+                                    strSurname, strAddress, strEmail,strPoint);
                         
                         break;
                     case 2:

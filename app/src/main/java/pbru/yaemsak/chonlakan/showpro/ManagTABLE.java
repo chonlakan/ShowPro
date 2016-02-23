@@ -100,7 +100,7 @@ public class ManagTABLE {
 
     public long addNewValueToPromotion(String strPromotion,
                                        String strCondition,
-                                       String strPictPromotoin,
+                                       String strPictPromotion,
                                        String strTimeStart,
                                        String strTimeEnd,
                                        String strPlace,
@@ -110,7 +110,7 @@ public class ManagTABLE {
         ContentValues objContentValues = new ContentValues();
         objContentValues.put(COLUMN_NamePromotion, strPromotion);
         objContentValues.put(COLUMN_Condition, strCondition);
-        objContentValues.put(COLUMN_PictPromotion, strPictPromotoin);
+        objContentValues.put(COLUMN_PictPromotion, strPictPromotion);
         objContentValues.put(COLUMN_TimeStart, strTimeStart);
         objContentValues.put(COLUMN_TimeEnd, strTimeEnd);
         objContentValues.put(COLUMN_Place, strPlace);
