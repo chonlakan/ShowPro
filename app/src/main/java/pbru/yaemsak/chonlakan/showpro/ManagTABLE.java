@@ -24,6 +24,7 @@ public class ManagTABLE {
     public static final String COLUMN_Address = "Address";
     public static final String COLUMN_Email = "Email";
     public static final String COLUMN_Point = "Point";
+
     public static final String COLUMN_NamePromotion = "NamePromotion";
     public static final String COLUMN_Condition = "Condition";
     public static final String COLUMN_PictPromotion = "PictPromotion";
@@ -32,7 +33,6 @@ public class ManagTABLE {
     public static final String COLUMN_Place = "Place";
     public static final String COLUMN_Lat = "Lat";
     public static final String COLUMN_Lng = "Lng";
-    public static final String COLUMN_Reward = "Reward";
 
     public static final String TABLE_REWARD = "rewardTABLE";
     public static final String COLUMN_Reward_Name = "Reward_Name";
@@ -105,8 +105,7 @@ public class ManagTABLE {
                                        String strTimeEnd,
                                        String strPlace,
                                        String strLat,
-                                       String strLng,
-                                       String strReward) {
+                                       String strLng) {
         ContentValues objContentValues = new ContentValues();
         objContentValues.put(COLUMN_NamePromotion, strPromotion);
         objContentValues.put(COLUMN_Condition, strCondition);
@@ -116,7 +115,6 @@ public class ManagTABLE {
         objContentValues.put(COLUMN_Place, strPlace);
         objContentValues.put(COLUMN_Lat, strLat);
         objContentValues.put(COLUMN_Lng, strLng);
-        objContentValues.put(COLUMN_Reward, strReward);
         //Add
         return WritSqLiteDatabase.insert(TABLE_promotion, null, objContentValues);
     }
@@ -140,6 +138,5 @@ public class ManagTABLE {
         //Add
         return WritSqLiteDatabase.insert(TABLE_USER, null, objContentValues);
     }
-
 
 }//Main class

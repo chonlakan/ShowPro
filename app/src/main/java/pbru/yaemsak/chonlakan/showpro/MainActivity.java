@@ -211,9 +211,8 @@ public class MainActivity extends AppCompatActivity {
                             String strPlace = jsonObject.getString(ManagTABLE.COLUMN_Place);
                             String strLat = jsonObject.getString(ManagTABLE.COLUMN_Lat);
                             String strLng = jsonObject.getString(ManagTABLE.COLUMN_Lng);
-                            String strReward = jsonObject.getString(ManagTABLE.COLUMN_Reward);
                         objManagTABLE.addNewValueToPromotion(strPromotion,strCondition,strPictPromotion
-                                ,strTimeStart,strTimeEnd,strPlace,strLat,strLng,strReward);
+                                ,strTimeStart,strTimeEnd,strPlace,strLat,strLng);
 
                         break;
                     case 3:
@@ -265,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
                 "testSurname","testAddress","testEmail","testPoint");
 
         objManagTABLE.addNewValueToPromotion("Promotion","Condition","PictPromotion","Start","End",
-                "Place","Lat","Lng","Reward");
+                "Place","Lat","Lng");
     }
 
 
