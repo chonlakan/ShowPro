@@ -30,8 +30,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
             "TimeEnd text," +
             "Place text," +
             "Lat text," +
-            "Lng text," +
-            "Reward text);";
+            "Lng text);";
 
     private static final String CREATE_REWARD_TABLE = "create table rewardTABLE(" +
             "_id integer primary key," +
