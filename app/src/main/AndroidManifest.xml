@@ -42,7 +42,9 @@
 
         <activity
             android:name=".DetailPromotionActivity"
-            android:label="@string/title_activity_detail_promotion"></activity>
+            android:label="@string/title_activity_detail_promotion" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".RewardActivity"></activity>
     </application>
 
 </manifest>
