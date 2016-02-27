@@ -67,9 +67,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/scrollView2"
-            android:layout_margin="10dp"
             android:padding="10dp"
-            android:background="#82ffffff">
+            android:background="#82ffffff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="2dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -86,5 +89,10 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:id="@+id/button7"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:nestedScrollingEnabled="false"
+        android:onClick="clickBackPromotion"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="5dp" />
 </RelativeLayout>

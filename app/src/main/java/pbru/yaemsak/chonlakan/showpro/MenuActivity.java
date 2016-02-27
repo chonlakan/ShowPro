@@ -52,10 +52,13 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MenuActivity.this, PromotionActivity.class));
                 break;
             case R.id.imageView4:
+
                 break;
             case R.id.imageView5:
+                //startActivity(new Intent(MenuActivity.this, RewardActivity.class));
                 break;
             case R.id.imageView6:
+                //startActivity(new Intent(MenuActivity.this, AboutActivity.class));
                 break;
 
         }//switch

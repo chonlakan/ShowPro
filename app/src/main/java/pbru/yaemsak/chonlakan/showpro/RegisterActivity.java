@@ -2,6 +2,7 @@ package pbru.yaemsak.chonlakan.showpro;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.Address;
 import android.os.StrictMode;
 import android.provider.ContactsContract;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -27,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     //Explicit
     private EditText userEditText,passwordEditText,nameEditText,surnameEditText,addressEditText, emailEditText;
     private String userString, passwordString,nameString, surnameString, addressString, emailString;
-
+    private TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //Bide widget
         bindWidget();
-
+        setWidgetEventListener();
     }//Main Method
 
     public void clickSaveData(View view) {
@@ -111,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void updateToMySQL() {
 
         StrictMode.ThreadPolicy myPolicy = new StrictMode.ThreadPolicy.Builder()
-                .permitAll().build();                                   //ปลดล็อค permission ให้เข้าถึงได้ทุก โปรโตคอล
+                .permitAll().build();                       //ปลดล็อค permission ให้เข้าถึงได้ทุก โปรโตคอล
         StrictMode.setThreadPolicy(myPolicy);
 
         try {
@@ -164,6 +166,16 @@ public class RegisterActivity extends AppCompatActivity {
         addressEditText = (EditText) findViewById(R.id.editText7);
         emailEditText = (EditText) findViewById(R.id.editText8);
 
+        mTextView = (TextView) findViewById(R.id.login_link);
+    }
+
+    private void setWidgetEventListener() {
+        mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
 
 
     }//Bide widget

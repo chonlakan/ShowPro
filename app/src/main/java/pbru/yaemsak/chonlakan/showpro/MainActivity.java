@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ManagTABLE objManagTABLE;
     private EditText userEditText, passwordEditText;
     private  String userString, passwordString;
+    private TextView mTextView;
 
 
 
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Bind Widget
         bidwidget();
-
+        setWidgetEventListener();
         //connected database
         objManagTABLE = new ManagTABLE(this);
 
@@ -73,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }//click login
+
+    public void clickGuest(View view) {
+        startActivity(new Intent(MainActivity.this, MenuActivity.class));
+    }
 
     private void checkUser() {
         try {
@@ -107,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void bidwidget() {
-
+        mTextView = (TextView) findViewById(R.id.register_link);
         userEditText = (EditText) findViewById(R.id.editText);
         passwordEditText = (EditText)  findViewById(R.id.editText2);
 
@@ -149,11 +155,11 @@ public class MainActivity extends AppCompatActivity {
                 HttpResponse objHttpResponse = objHttpClient.execute(objHttpPost);
                 HttpEntity objHttpEntity = objHttpResponse.getEntity();
                 objInputStream = objHttpEntity.getContent();
-                
+
             } catch (Exception e) {
                 Log.d(tag, "InputStream ==>" + e.toString());
             }
-            
+
             //2.create JSON Sting
             String strJSON = null;
 
@@ -173,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 Log.d(tag, "JSON ==> " + e.toString());
             }
-            
+
             //3.Update SQLite
             try {
 
@@ -181,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < objJsonArray.length(); i++) {
                     JSONObject jsonObject = objJsonArray.getJSONObject(i);
                 switch (intTimes) {
-                    
+
                     case 1:
                         // For userTABLE
                             String strUser = jsonObject.getString(ManagTABLE.COLUMN_User);
@@ -193,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                             String strPoint = jsonObject.getString(ManagTABLE.COLUMN_Point);
                             objManagTABLE.addNewValueToUser(strUser, strPassword, strName,
                                     strSurname, strAddress, strEmail,strPoint);
-                        
+
                         break;
                     case 2:
                         //For promotionTABLE
@@ -235,8 +241,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void clickRegister(View view) {
-        startActivity(new Intent(MainActivity.this,RegisterActivity.class));
+    private void setWidgetEventListener() {
+        mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class)); // หน้า Register
+            }
+        });
     }
 
 

@@ -71,7 +71,7 @@ public class PromotionActivity extends AppCompatActivity {
 
     }//create list view
 
-    public void clickBackPromotion(View view) {
-        finish();
+    public void clickBackMenu(View view) {
+        startActivity(new Intent(PromotionActivity.this, MenuActivity.class));
     }
 }// Main Class

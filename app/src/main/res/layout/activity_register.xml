@@ -13,30 +13,40 @@
         android:id="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:textSize="@dimen/h1"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="10dp" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:onClick="clickSaveData"
         android:text="@string/save"
         android:id="@+id/button4"
-        android:layout_alignParentBottom="true" />
+        android:layout_below="@+id/scrollView"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="16dp" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="320dp"
         android:id="@+id/scrollView"
         android:layout_below="@+id/textView2"
-        android:layout_above="@+id/button4"
-        android:layout_margin="15dp"
-        android:background="#82ffffff">
+        android:background="#82ffffff"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="35dp">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:paddingTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -159,4 +169,16 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_link"
+        android:id="@+id/login_link"
+
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="19dp"
+        android:textSize="18dp" />
+
 </RelativeLayout>

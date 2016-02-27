@@ -12,15 +12,19 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="#82ffffff"
-        android:padding="60dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="40dp"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="25dp">
 
         <ImageView
             android:layout_width="@dimen/icon"
             android:layout_height="@dimen/icon"
             android:id="@+id/imageView"
             android:src="@drawable/logo_pbru"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,49 +33,53 @@
             android:id="@+id/textView"
             android:textSize="@dimen/h1"
             android:textStyle="bold"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:id="@+id/editText"
             android:hint="@string/user"
-            android:inputType="text" />
+            android:inputType="text"
+            android:layout_marginTop="9dp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText2"
             android:hint="@string/pass"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:layout_marginBottom="15dp" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:onClick="clickLoin"
             android:text="@string/login"
-            android:id="@+id/button" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp" />
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:text="@string/guest"
             android:id="@+id/button2"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="clickRegister"
-            android:text="@string/register"
-            android:id="@+id/button3"
-            android:layout_weight="1" />
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:onClick="clickGuest"
+            android:layout_marginTop="5dp" />
     </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_link"
+            android:textSize="18sp"
+            android:onClick="clickRegister"
+            android:id="@+id/register_link"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="19dp"/>
 </RelativeLayout>
