@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             //Have Space
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();
             objMyAlertDialog.myDialog(MainActivity.this,
-                    R.drawable.icon_question,"มีช่องว่างครับ","กรุณากรอกให้ครบทุกช่องครับ");
+                    R.drawable.q2,"มีช่องว่างครับ","กรุณากรอกให้ครบทุกช่องครับ");
         } else {
             // NO Space
             checkUser();

@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
             //Have Space
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();
             objMyAlertDialog.myDialog(RegisterActivity.this, R.drawable.ch2,"มีช่องว่างหรือ user ซ้ำ"
-                    ,"กรุณากรอกข้อมูลให้ครบทุกช่อง หรือ user ซ้ำ");
+                    ,"กรุณากรอกข้อมูลให้ครบทุกช่อง");
 
         } else {
             // No Space
@@ -108,12 +108,12 @@ public class RegisterActivity extends AppCompatActivity {
         });
         objBuilder.show();// show data
 
-    }//ConfirmRegister
+    }//Confirm Register
 
     private void updateToMySQL() {
 
         StrictMode.ThreadPolicy myPolicy = new StrictMode.ThreadPolicy.Builder()
-                .permitAll().build();                       //ปลดล็อค permission ให้เข้าถึงได้ทุก โปรโตคอล
+                .permitAll().build();  //ปลดล็อค permission ให้เข้าถึงได้ทุก โปรโตคอล
         StrictMode.setThreadPolicy(myPolicy);
 
         try {
