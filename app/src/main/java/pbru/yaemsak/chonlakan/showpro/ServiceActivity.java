@@ -72,10 +72,10 @@ public class ServiceActivity extends AppCompatActivity {
 
     private int checkReward(String pointRewardString) {// เช็คแต้ม
 
-        int intIconSmall = R.drawable.true2;
+        int intIconSmall = R.drawable.t1;
 
         if (myscoreAnInt < Integer.parseInt(pointRewardString)) {
-            intIconSmall = R.drawable.false1;
+            intIconSmall = R.drawable.f1;
         }
 
         return intIconSmall;

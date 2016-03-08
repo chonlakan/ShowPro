@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (checkSpace() || checkUser() ) {
             //Have Space
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();
-            objMyAlertDialog.myDialog(RegisterActivity.this, R.drawable.icon_question,"มีช่องว่างหรือ user ซ้ำ"
+            objMyAlertDialog.myDialog(RegisterActivity.this, R.drawable.ch2,"มีช่องว่างหรือ user ซ้ำ"
                     ,"กรุณากรอกข้อมูลให้ครบทุกช่อง หรือ user ซ้ำ");
 
         } else {
@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void confirmRegister() {
         AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
-        objBuilder.setIcon(R.drawable.icon_myaccount);
+        objBuilder.setIcon(R.drawable.ch3);
         objBuilder.setTitle("โปรดตรวจสอบข้อมูลอีกครั้ง");
         objBuilder.setMessage("User = " + userString + "\n" +
                 "Password = " + passwordString + "\n" +
@@ -133,7 +133,7 @@ public class RegisterActivity extends AppCompatActivity {
             objHttpClient.execute(objHttpPost);
 
             MyAlertDialog obj2MyAlertDialog = new MyAlertDialog();
-            obj2MyAlertDialog.myDialog(RegisterActivity.this,R.drawable.icon_myaccount,
+            obj2MyAlertDialog.myDialog(RegisterActivity.this,R.drawable.ch1,
                     "อัพโหลดได้แล้ว",
                     "ข้อมูลได้ขึ้นบน server เรียบร้อยแล้ว");
 
@@ -141,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();
-            objMyAlertDialog.myDialog(RegisterActivity.this,R.drawable.icon_myaccount,
+            objMyAlertDialog.myDialog(RegisterActivity.this,R.drawable.warng,
                     "ไม่สามารถอัพเดตข้อมูลได้",
                     "เกิดความผิดพลาดไม่สามารถอัพเดตข้อมูลขึ้น Server ได้");
         }

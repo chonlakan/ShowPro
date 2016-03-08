@@ -8,7 +8,7 @@
     <string name="guest">Guest</string>
     <string name="register">Register</string>
     <string name="register_link">Not a member? Sign up now.</string>
-    <string name="login_link">already registered! Login Me.</string>
+    <string name="login_link">Already registered! Login Me.</string>
     <string name="name">Name :</string>
     <string name="surnanme">Surname :</string>
     <string name="address">Address :</string>

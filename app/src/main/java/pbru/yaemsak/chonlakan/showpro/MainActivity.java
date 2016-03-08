@@ -98,14 +98,14 @@ public class MainActivity extends AppCompatActivity {
                 //password False
                 MyAlertDialog objMyAlertDialog = new MyAlertDialog();
                 objMyAlertDialog.myDialog(MainActivity.this,
-                        R.drawable.icon_myaccount,"Password False","กรุณาลองใหม่อีกครั้งครับ");
+                       R.drawable.q2,"Password False","กรุณาลองใหม่อีกครั้งครับ");
             }
 
 
         } catch (Exception e) {
-            MyAlertDialog objMyAlertDialog =new MyAlertDialog();
+            MyAlertDialog objMyAlertDialog = new MyAlertDialog();
             objMyAlertDialog.myDialog(MainActivity.this,
-                    R.drawable.icon_myaccount,"ไม่มี User", "ไม่มี " + userString + " ในฐานข้อมูล");
+                    R.drawable.ch2,"ไม่พบ User", "ไม่มี " + userString + " ในฐานข้อมูล");
         }
 
 
