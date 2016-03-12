@@ -15,7 +15,6 @@ public class ManagTABLE {
     private SQLiteDatabase WritSqLiteDatabase, readSqLiteDatabase;
 
     public static final String TABLE_USER = "userTABLE";
-    public static final String TABLE_promotion = "promotionTABLE";
     public static final String COLUMN_id = "_id";
     public static final String COLUMN_User = "User";
     public static final String COLUMN_Password = "Password";
@@ -25,11 +24,13 @@ public class ManagTABLE {
     public static final String COLUMN_Email = "Email";
     public static final String COLUMN_Point = "Point";
 
+    public static final String TABLE_promotion = "promotionTABLE";
     public static final String COLUMN_NamePromotion = "NamePromotion";
     public static final String COLUMN_Condition = "Condition";
     public static final String COLUMN_PictPromotion = "PictPromotion";
     public static final String COLUMN_TimeStart = "TimeStart";
     public static final String COLUMN_TimeEnd = "TimeEnd";
+
     public static final String COLUMN_Place = "Place";
     public static final String COLUMN_Lat = "Lat";
     public static final String COLUMN_Lng = "Lng";
@@ -118,6 +119,17 @@ public class ManagTABLE {
         //Add
         return WritSqLiteDatabase.insert(TABLE_promotion, null, objContentValues);
     }
+
+    /*protected long addNewValueToPlace(String strPlace,
+                                      String strLat,
+                                      String strLng) {
+        ContentValues objContentValues = new ContentValues();
+        objContentValues.put(COLUMN_Place, strPlace);
+        objContentValues.put(COLUMN_Lat, strLat);
+        objContentValues.put(COLUMN_Lng, strLng);
+        //Add
+        return WritSqLiteDatabase.insert(TABLE_place, null, objContentValues);
+    }*/
 
     public long addNewValueToUser(String strUser,
                                   String strPassword,

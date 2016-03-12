@@ -32,7 +32,7 @@ public class PromotionActivity extends AppCompatActivity {
                 MODE_PRIVATE, null);
 
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManagTABLE.TABLE_promotion +
-                " ORDER BY _id DESC", null);//เรียงลำดับจากข้อมูลใหม่ไปข้อมูลเก่า
+                " ORDER BY _id DESC", null);//เรียงลำดับจากข้อมูลมากไปน้อย , ASC น้อยไปมาก
         cursor.moveToFirst();
 
         String[] namePromotion = new String[cursor.getCount()];

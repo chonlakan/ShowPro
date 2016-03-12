@@ -17,4 +17,6 @@
     <string name="email">Email :</string>
     <string name="save">Register</string>
     <string name="title_activity_detail_promotion">Map</string>
+
+    <string name="about">ShowPro เป็นแอพพลิเคชั่นเกี่ยวกับการแจ้งเตือนข่าวสารต่างๆที่เกี่ยวกับโปรโมชั่นและสามารถแสดงแผนที่สาขา เพื่อเพิ่มความสะดวกสบายแก่ผู้ใช้</string>
 </resources>

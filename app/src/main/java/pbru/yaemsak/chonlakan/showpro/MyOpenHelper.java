@@ -32,6 +32,12 @@ public class MyOpenHelper extends SQLiteOpenHelper {
             "Lat text," +
             "Lng text);";
 
+    /*private static final String CREATE_PLACE_TABLE = "create table placeTABLE(" +
+            "_id integer primary key," +
+            "Place text," +
+            "Lat text," +
+            "Lng text);";       */
+
     private static final String CREATE_REWARD_TABLE = "create table rewardTABLE(" +
             "_id integer primary key," +
             "Reward_Name text," +
@@ -48,6 +54,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
         db.execSQL(CREATE_PROMOTION_TABLE);
+       // db.execSQL(CREATE_PLACE_TABLE);
         db.execSQL(CREATE_REWARD_TABLE);
     }
 

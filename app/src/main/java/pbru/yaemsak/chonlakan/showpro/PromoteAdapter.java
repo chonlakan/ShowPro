@@ -52,7 +52,7 @@ public class PromoteAdapter extends BaseAdapter{
         View view1 = layoutInflater.inflate(R.layout.promotion_listview, viewGroup, false);
 
         ImageView iconImageView = (ImageView) view1.findViewById(R.id.imageView7);
-        Picasso.with(context).load(iconStrings[i]).resize(120,120).into(iconImageView);
+        Picasso.with(context).load(iconStrings[i]).resize(160,120).into(iconImageView);
         TextView titleTextView = (TextView) view1.findViewById(R.id.textView19);
         titleTextView.setText(titleStrings[i]);
 

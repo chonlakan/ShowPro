@@ -9,4 +9,5 @@
     <dimen name="icon_W">160dp</dimen>
     <dimen name="h1">32sp</dimen>
     <dimen name="h2">20sp</dimen>
+    <dimen name="h3">18sp</dimen>
 </resources>

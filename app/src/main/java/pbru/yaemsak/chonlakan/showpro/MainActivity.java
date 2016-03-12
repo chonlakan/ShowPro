@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
             String strURLuser = "http://swiftcodingthai.com/mac/php_get_data_max.php";
             String strURLpromote = "http://swiftcodingthai.com/mac/php_get_promot_max.php";
             String strURLreward = "http://swiftcodingthai.com/mac/php_get_reward_max.php";
+       //     String strURLplace = "http://swiftcodingthai.com/mac/php_get_place.php";
             HttpPost objHttpPost = null;
             String tag = "ShowPro";
 
@@ -199,8 +200,8 @@ public class MainActivity extends AppCompatActivity {
                             String strPoint = jsonObject.getString(ManagTABLE.COLUMN_Point);
                             objManagTABLE.addNewValueToUser(strUser, strPassword, strName,
                                     strSurname, strAddress, strEmail,strPoint);
-
                         break;
+
                     case 2:
                         //For promotionTABLE
                             String strPromotion = jsonObject.getString(ManagTABLE.COLUMN_NamePromotion);
@@ -213,17 +214,26 @@ public class MainActivity extends AppCompatActivity {
                             String strLng = jsonObject.getString(ManagTABLE.COLUMN_Lng);
                         objManagTABLE.addNewValueToPromotion(strPromotion,strCondition,strPictPromotion
                                 ,strTimeStart,strTimeEnd,strPlace,strLat,strLng);
-
                         break;
+
                     case 3:
 
                         //for rewardTable
                         String strRewardName = jsonObject.getString(ManagTABLE.COLUMN_Reward_Name);
                         String strUserPoint = jsonObject.getString(ManagTABLE.COLUMN_Use_Point);
                         String strPict_Reward = jsonObject.getString(ManagTABLE.COLUMN_Pict_Reward);
-
                         objManagTABLE.addReward(strRewardName,strUserPoint,strPict_Reward);
                         break;
+
+                    /*case 4:
+                        //For promotionTABLE
+                        String strPlace = jsonObject.getString(ManagTABLE.COLUMN_Place);
+                        String strLat = jsonObject.getString(ManagTABLE.COLUMN_Lat);
+                        String strLng = jsonObject.getString(ManagTABLE.COLUMN_Lng);
+                        objManagTABLE.addNewValueToPlace(strPromotion,strCondition,strPictPromotion
+                                ,strTimeStart,strTimeEnd,strPlace,strLat,strLng);
+                        break;*/
+
 
 
 
@@ -256,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
         objSqLiteDatabase.delete(ManagTABLE.TABLE_USER,null, null);
         objSqLiteDatabase.delete(ManagTABLE.TABLE_promotion, null, null);
         objSqLiteDatabase.delete(ManagTABLE.TABLE_REWARD, null, null);
+    //    objSqLiteDatabase.delete(ManagTABLE.TABLE_PLACE, null, null);
 
     }
 
