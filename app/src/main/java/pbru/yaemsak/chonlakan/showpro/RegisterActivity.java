@@ -165,7 +165,6 @@ public class RegisterActivity extends AppCompatActivity {
         surnameEditText = (EditText) findViewById(R.id.editText6);
         addressEditText = (EditText) findViewById(R.id.editText7);
         emailEditText = (EditText) findViewById(R.id.editText8);
-
         mTextView = (TextView) findViewById(R.id.login_link);
     }
 
@@ -176,7 +175,6 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
-
 
     }//Bide widget
 

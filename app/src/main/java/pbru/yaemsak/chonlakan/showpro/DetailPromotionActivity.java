@@ -26,7 +26,7 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
     private String idString;
     private String[] resultStrings;// ตัวแปลที่จะใช้ข้อมูล cursor 1 แถว listview
     private TextView namePromoteTextView,
-            startTextView,
+            startTextView, placeTextView,
             endTextView, conditionTextView;
 
 
@@ -58,6 +58,7 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         conditionTextView.setText(resultStrings[2]);
         startTextView.setText(resultStrings[4]);
         endTextView.setText(resultStrings[5]);
+        placeTextView.setText(resultStrings[6]);
 
     }//show Method
 
@@ -66,6 +67,7 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         conditionTextView = (TextView) findViewById(R.id.textView25);
         startTextView = (TextView) findViewById(R.id.textView26);
         endTextView = (TextView) findViewById(R.id.textView27);
+        placeTextView = (TextView) findViewById(R.id.textView35);
 
     }//Bind widget
 
@@ -98,7 +100,7 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         double douLngCenter = Double.parseDouble(resultStrings[8]);
 
         LatLng centerLatLng = new LatLng(douLatCenter, douLngCenter);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 17)); // ระยะ zoom
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 15)); // ระยะ zoom
 
     }//on MapReady
 
