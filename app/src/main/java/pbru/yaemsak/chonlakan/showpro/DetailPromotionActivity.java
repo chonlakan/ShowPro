@@ -3,6 +3,7 @@ package pbru.yaemsak.chonlakan.showpro;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -77,7 +79,7 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         Log.d("23Feb", "ID =>" + idString);
 
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
-                MODE_PRIVATE,null);
+                MODE_PRIVATE, null);
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM promotionTABLE WHERE _id = " + "'" + idString + "'"
                 , null);
         cursor.moveToFirst();
@@ -102,7 +104,30 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         LatLng centerLatLng = new LatLng(douLatCenter, douLngCenter);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 15)); // ระยะ zoom
 
+        //Show Marker of Promotion
+        showMarkerOfPromotion(douLatCenter, douLngCenter);
+
+
     }//on MapReady
+
+    private void showMarkerOfPromotion(double douLatCenter, double douLngCenter) {
+        LatLng latLng = new LatLng(douLatCenter, douLngCenter);
+
+        //Maker แบบธรรมดา
+        //mMap.addMarker(new MarkerOptions() //สร้าง marker
+         //       .position(latLng)
+        //.title(resultStrings[6])
+       // .snippet(resultStrings[1]));
+
+        //Marker แบบใช้รูปตัวเอง
+        mMap.addMarker(new MarkerOptions()
+                .position(latLng)
+        .icon(BitmapDescriptorFactory.fromResource(R.drawable.build4))
+        .title(resultStrings[6])
+        .snippet(resultStrings[1]));
+
+
+    }//ShowMarkerOfPromotion
 
     public void clickBackPromotion(View view) {
         startActivity(new Intent(DetailPromotionActivity.this, PromotionActivity.class));

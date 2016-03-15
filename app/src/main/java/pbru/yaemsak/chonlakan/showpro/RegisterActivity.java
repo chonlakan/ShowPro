@@ -134,20 +134,18 @@ public class RegisterActivity extends AppCompatActivity {
 
             MyAlertDialog obj2MyAlertDialog = new MyAlertDialog();
             obj2MyAlertDialog.myDialog(RegisterActivity.this,R.drawable.ch1,
-                    "อัพโหลดได้แล้ว",
-                    "ข้อมูลได้ขึ้นบน server เรียบร้อยแล้ว");
+                    "อัพโหลดได้แล้ว", "ข้อมูลได้ขึ้นบน server เรียบร้อยแล้ว");
 
             finish();// เมื่อกด confirm จะกลับมาหน้า Login
 
         } catch (Exception e) {
             MyAlertDialog objMyAlertDialog = new MyAlertDialog();
             objMyAlertDialog.myDialog(RegisterActivity.this,R.drawable.warng,
-                    "ไม่สามารถอัพเดตข้อมูลได้",
-                    "เกิดความผิดพลาดไม่สามารถอัพเดตข้อมูลขึ้น Server ได้");
+                    "ไม่สามารถอัพเดตข้อมูลได้", "เกิดความผิดพลาดไม่สามารถอัพเดตข้อมูลขึ้น Server ได้");
         }
     }// update to mySQL
 
-    private boolean checkSpace() {
+    private boolean checkSpace() { //Have Space
         return userString.equals("") ||
                 passwordString.equals("") ||
                 nameString.equals("") ||
@@ -155,7 +153,6 @@ public class RegisterActivity extends AppCompatActivity {
                 addressString.equals("") ||
                 emailString.equals("");
     }
-
 
     private void bindWidget() {
 
