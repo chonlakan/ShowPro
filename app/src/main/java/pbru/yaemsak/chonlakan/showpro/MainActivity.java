@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.parse.ParseAnalytics;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -33,12 +37,22 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextView;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //parse notification
+        ParseAnalytics.trackAppOpened(getIntent());
+        PushService.subscribe(this, "free_version", MainActivity.class);
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                ParseInstallation.getCurrentInstallation().saveInBackground();
+            }
+        }).start();
+
 
         //Bind Widget
         bidwidget();
