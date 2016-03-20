@@ -24,13 +24,14 @@ public class ManagTABLE {
     public static final String COLUMN_Email = "Email";
     public static final String COLUMN_Point = "Point";
 
-    public static final String TABLE_promotion = "promotionTABLE";
+    public static final String TABLE_PROMOTION = "promotionTABLE";
     public static final String COLUMN_NamePromotion = "NamePromotion";
     public static final String COLUMN_Condition = "Condition";
     public static final String COLUMN_PictPromotion = "PictPromotion";
     public static final String COLUMN_TimeStart = "TimeStart";
     public static final String COLUMN_TimeEnd = "TimeEnd";
 
+    //public static final String TABLE_PLACE = "placeTABLE";
     public static final String COLUMN_Place = "Place";
     public static final String COLUMN_Lat = "Lat";
     public static final String COLUMN_Lng = "Lng";
@@ -117,7 +118,7 @@ public class ManagTABLE {
         objContentValues.put(COLUMN_Lat, strLat);
         objContentValues.put(COLUMN_Lng, strLng);
         //Add
-        return WritSqLiteDatabase.insert(TABLE_promotion, null, objContentValues);
+        return WritSqLiteDatabase.insert(TABLE_PROMOTION, null, objContentValues);
     }
 
     /*protected long addNewValueToPlace(String strPlace,
@@ -128,7 +129,7 @@ public class ManagTABLE {
         objContentValues.put(COLUMN_Lat, strLat);
         objContentValues.put(COLUMN_Lng, strLng);
         //Add
-        return WritSqLiteDatabase.insert(TABLE_place, null, objContentValues);
+        return WritSqLiteDatabase.insert(TABLE_PLACE, null, objContentValues);
     }*/
 
     public long addNewValueToUser(String strUser,

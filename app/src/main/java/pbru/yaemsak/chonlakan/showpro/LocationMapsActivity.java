@@ -138,7 +138,7 @@ public class LocationMapsActivity extends FragmentActivity implements OnMapReady
     };
 
     private void openServiceLocation() {
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);//เปิด หำพอรแำ
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);//เปิด service
         criteria = new Criteria();
         criteria.setAccuracy(Criteria.ACCURACY_FINE);
         criteria.setAltitudeRequired(false);
@@ -155,5 +155,7 @@ public class LocationMapsActivity extends FragmentActivity implements OnMapReady
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }//on<apready
+
+    }//on already
+
 }//Main Class

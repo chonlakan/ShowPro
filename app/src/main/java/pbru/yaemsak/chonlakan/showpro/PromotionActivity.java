@@ -31,7 +31,7 @@ public class PromotionActivity extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
                 MODE_PRIVATE, null);
 
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManagTABLE.TABLE_promotion +
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManagTABLE.TABLE_PROMOTION +
                 " ORDER BY _id DESC", null);//เรียงลำดับจากข้อมูลมากไปน้อย , ASC น้อยไปมาก
         cursor.moveToFirst();
 

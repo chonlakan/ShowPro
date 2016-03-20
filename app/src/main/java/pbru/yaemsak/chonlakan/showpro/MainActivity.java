@@ -145,10 +145,10 @@ public class MainActivity extends AppCompatActivity {
             //มี3ขั้นตอน
             //1.Create InputStream
             InputStream objInputStream = null;
-            String strURLuser = "http://swiftcodingthai.com/mac/php_get_data_max.php";
-            String strURLpromote = "http://swiftcodingthai.com/mac/php_get_promot_max.php";
-            String strURLreward = "http://swiftcodingthai.com/mac/php_get_reward_max.php";
-       //     String strURLplace = "http://swiftcodingthai.com/mac/php_get_place.php";
+            String strURLuser = "http://chonlakan.com/max/get_data.php";
+            String strURLpromote = "http://chonlakan.com/max/get_promot.php";
+            String strURLreward = "http://chonlakan.com/max/get_reward.php";
+     //     String strURLplace = "http://chonlakan.com/max/get_place.php";
             HttpPost objHttpPost = null;
             String tag = "ShowPro";
 
@@ -231,8 +231,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 3:
-
-                        //for rewardTable
+                        //for rewardTABLE
                         String strRewardName = jsonObject.getString(ManagTABLE.COLUMN_Reward_Name);
                         String strUserPoint = jsonObject.getString(ManagTABLE.COLUMN_Use_Point);
                         String strPict_Reward = jsonObject.getString(ManagTABLE.COLUMN_Pict_Reward);
@@ -240,16 +239,13 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     /*case 4:
-                        //For promotionTABLE
+                        //For placeTABLE
                         String strPlace = jsonObject.getString(ManagTABLE.COLUMN_Place);
                         String strLat = jsonObject.getString(ManagTABLE.COLUMN_Lat);
                         String strLng = jsonObject.getString(ManagTABLE.COLUMN_Lng);
                         objManagTABLE.addNewValueToPlace(strPromotion,strCondition,strPictPromotion
                                 ,strTimeStart,strTimeEnd,strPlace,strLat,strLng);
                         break;*/
-
-
-
 
                 }//switch
                 }//for
@@ -278,9 +274,9 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
                 MODE_PRIVATE, null);
         objSqLiteDatabase.delete(ManagTABLE.TABLE_USER,null, null);
-        objSqLiteDatabase.delete(ManagTABLE.TABLE_promotion, null, null);
+        objSqLiteDatabase.delete(ManagTABLE.TABLE_PROMOTION, null, null);
         objSqLiteDatabase.delete(ManagTABLE.TABLE_REWARD, null, null);
-    //    objSqLiteDatabase.delete(ManagTABLE.TABLE_PLACE, null, null);
+  //    objSqLiteDatabase.delete(ManagTABLE.TABLE_PLACE, null, null);
 
     }
 
@@ -291,6 +287,5 @@ public class MainActivity extends AppCompatActivity {
         objManagTABLE.addNewValueToPromotion("Promotion","Condition","PictPromotion","Start","End",
                 "Place","Lat","Lng");
     }
-
 
 }// Main class

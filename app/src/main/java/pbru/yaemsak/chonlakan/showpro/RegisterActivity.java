@@ -134,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
             objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Email, emailString));
 
             HttpClient objHttpClient = new DefaultHttpClient();
-            HttpPost objHttpPost = new HttpPost("http://swiftcodingthai.com/mac/php_add_data_max.php");
+            HttpPost objHttpPost = new HttpPost("http://chonlakan.com/max/add_data.php");
             objHttpPost.setEntity(new UrlEncodedFormEntity(objNameValuePairs,"UTF-8"));
             objHttpClient.execute(objHttpPost);
 

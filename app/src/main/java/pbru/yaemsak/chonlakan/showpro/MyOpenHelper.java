@@ -54,7 +54,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
         db.execSQL(CREATE_PROMOTION_TABLE);
-       // db.execSQL(CREATE_PLACE_TABLE);
+        // db.execSQL(CREATE_PLACE_TABLE);
         db.execSQL(CREATE_REWARD_TABLE);
     }
 
