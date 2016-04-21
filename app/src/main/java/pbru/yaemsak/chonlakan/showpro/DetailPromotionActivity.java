@@ -102,8 +102,8 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         double douLngCenter = Double.parseDouble(resultStrings[8]);
 
         LatLng centerLatLng = new LatLng(douLatCenter, douLngCenter);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 15)); // ระยะ zoom
-
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 17)); // ระยะ zoom
+        mMap.setMapType(googleMap.MAP_TYPE_HYBRID);
         //Show Marker of Promotion
         showMarkerOfPromotion(douLatCenter, douLngCenter);
 
@@ -122,10 +122,9 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         //Marker แบบใช้รูปตัวเอง
         mMap.addMarker(new MarkerOptions()
                 .position(latLng)
-        .icon(BitmapDescriptorFactory.fromResource(R.drawable.build4))
-        .title(resultStrings[6])
-        .snippet(resultStrings[1]));
-
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.mak1))
+                .title(resultStrings[6])
+                .snippet(resultStrings[1]));
 
     }//ShowMarkerOfPromotion
 

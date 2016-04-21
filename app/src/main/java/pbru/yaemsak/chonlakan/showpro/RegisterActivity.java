@@ -132,6 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
             objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Surname, surnameString));
             objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Address, addressString));
             objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Email, emailString));
+            objNameValuePairs.add(new BasicNameValuePair(ManagTABLE.COLUMN_Point, "0"));
 
             HttpClient objHttpClient = new DefaultHttpClient();
             HttpPost objHttpPost = new HttpPost("http://chonlakan.com/max/add_data.php");
