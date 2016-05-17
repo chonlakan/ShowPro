@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="New Text11111555511111"
             android:id="@+id/textView19"
-            android:textSize="@dimen/h2"
+            android:textSize="15sp"
             android:layout_marginTop="12dp"
             android:textStyle="bold"
             android:layout_weight="0.51"
@@ -41,14 +41,14 @@
                 android:layout_height="wrap_content"
                 android:text="Start"
                 android:id="@+id/textView20"
-                android:textSize="@dimen/h2" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="trty"
                 android:id="@+id/textView21"
-                android:textSize="@dimen/h2"
+                android:textSize="15sp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 android:textColor="#ff4343" />
@@ -63,14 +63,14 @@
                 android:layout_height="wrap_content"
                 android:text="End"
                 android:id="@+id/textView22"
-                android:textSize="@dimen/h2" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/textView23"
-                android:textSize="@dimen/h2"
+                android:textSize="15sp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 android:textColor="#ff4343" />

@@ -13,6 +13,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -35,7 +36,6 @@ public class LocationMapsActivity extends FragmentActivity implements OnMapReady
 
         //Open service
         openServiceLocation();
-
 
     }//Main method
 
@@ -150,11 +150,39 @@ public class LocationMapsActivity extends FragmentActivity implements OnMapReady
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap = googleMap;
+
+        mMap.setMyLocationEnabled(true);
+        mMap.setMapType(googleMap.MAP_TYPE_HYBRID);
+
+        LatLng sydney = new LatLng(13.975795, 99.659115);
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 10));
+
+
+        mMap.addMarker(new MarkerOptions()
+                .title("Sydney")
+                .snippet("The most populous city in Australia.")
+                .position(sydney));
+
+       /* // Add a marker Current Location and move the camera
+        LatLng CurrentLocation = new LatLng(myLatADouble, myLngADouble);
+        mMap.addMarker(new MarkerOptions().position(CurrentLocation)
+        //.title("Your Current Location")
+        .icon(BitmapDescriptorFactory.fromResource(R.drawable.mar2)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(CurrentLocation));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(CurrentLocation, 13)); // ระยะ zoom
+        mMap.setMapType(googleMap.MAP_TYPE_HYBRID);*/
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+       /* LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.mar2))
+                .position(sydney)
+                .title("Marker in Sydney"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15));
+        mMap.setMapType(googleMap.MAP_TYPE_HYBRID);*/
 
     }//on already
 

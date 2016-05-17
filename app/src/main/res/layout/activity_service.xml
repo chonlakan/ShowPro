@@ -29,22 +29,24 @@
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@+id/textView10"
-            android:textSize="@dimen/h1"
+            android:textSize="25sp"
             android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reward :"
+            android:text="Reward"
             android:id="@+id/textView11"
-            android:textSize="@dimen/h2" />
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp" />
 
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/listView"
             android:background="#82ffffff"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="7dp"
             android:layout_marginBottom="5dp" />
     </LinearLayout>
 

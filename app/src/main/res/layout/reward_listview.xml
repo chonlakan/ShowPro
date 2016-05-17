@@ -7,7 +7,7 @@
         android:layout_width="@dimen/icon2"
         android:layout_height="@dimen/icon2"
         android:id="@+id/imvreward"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginBottom="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="20dp" />
@@ -48,6 +48,6 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="30dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="12dp" />
     </RelativeLayout>
 </LinearLayout>
