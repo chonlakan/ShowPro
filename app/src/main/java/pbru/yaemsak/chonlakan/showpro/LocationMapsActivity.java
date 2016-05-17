@@ -155,15 +155,15 @@ public class LocationMapsActivity extends FragmentActivity implements OnMapReady
         mMap.setMyLocationEnabled(true);
         mMap.setMapType(googleMap.MAP_TYPE_HYBRID);
 
-        LatLng sydney = new LatLng(13.975795, 99.659115);
+        LatLng yonghouse = new LatLng(13.975795, 99.659115);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 10));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(yonghouse, 10));
 
 
         mMap.addMarker(new MarkerOptions()
-                .title("Sydney")
-                .snippet("The most populous city in Australia.")
-                .position(sydney));
+                .title("บริษัท ยงเฮ้าส์ จำกัด")
+                .snippet("สาขา ท่าม่วง  โทร.034-626603-12")
+                .position(yonghouse));
 
        /* // Add a marker Current Location and move the camera
         LatLng CurrentLocation = new LatLng(myLatADouble, myLngADouble);

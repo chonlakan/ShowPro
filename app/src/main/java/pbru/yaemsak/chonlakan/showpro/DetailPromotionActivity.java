@@ -123,8 +123,7 @@ public class DetailPromotionActivity extends FragmentActivity implements OnMapRe
         mMap.addMarker(new MarkerOptions()
                 .position(latLng)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.mak1))
-                .title(resultStrings[6])
-                .snippet(resultStrings[1]));
+                .title(resultStrings[6]));
 
     }//ShowMarkerOfPromotion
 
