@@ -98,8 +98,8 @@
             android:layout_gravity="center_horizontal"
             android:textSize="16dp"
             android:onClick="clickGuest"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="1dp" />
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="2dp" />
 
     </LinearLayout>
 
@@ -112,6 +112,6 @@
             android:id="@+id/register_link"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="17dp"/>
+            android:layout_marginBottom="25dp"/>
 
 </RelativeLayout>
