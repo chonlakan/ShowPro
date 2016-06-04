@@ -12,7 +12,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView promotionImageView,
             locationImageView,
             rewardImageView,
-            aboutImageView;
+            aboutImageView,
+            facebookImageView;
 
 
     @Override
@@ -33,6 +34,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         locationImageView.setOnClickListener(this);
         rewardImageView.setOnClickListener(this);
         aboutImageView.setOnClickListener(this);
+        facebookImageView.setOnClickListener(this);
 
     }//imageController
 
@@ -41,6 +43,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         locationImageView  = (ImageView)findViewById(R.id.imageView4);
         rewardImageView  = (ImageView)findViewById(R.id.imageView5);
         aboutImageView = (ImageView)findViewById(R.id.imageView6);
+        facebookImageView = (ImageView) findViewById(R.id.imageView20);
     }
 
     @Override
@@ -60,7 +63,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.imageView6:
                 startActivity(new Intent(MenuActivity.this, AboutActivity.class));
                 break;
-
+            case R.id.imageView20:
+                startActivity(new Intent(MenuActivity.this, FacebookPage.class));
+                break;
 
         }//switch
 
