@@ -3,6 +3,8 @@ package pbru.yaemsak.chonlakan.showpro;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,7 @@ public class PromotionActivity extends AppCompatActivity {
 
     //Explicit
     private ListView promotionListView;
+    SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +24,18 @@ public class PromotionActivity extends AppCompatActivity {
 
         //Bind Widget
         promotionListView = (ListView)findViewById(R.id.listView2);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.srf);
+        mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override            public void onRefresh() {
+                // update data here
+                new refresh_data().execute();
+            }
 
+        });
         //CreateListView
         CreateListView();
 
@@ -70,6 +84,32 @@ public class PromotionActivity extends AppCompatActivity {
         });
 
     }//create list view
+    class refresh_data extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+        @Override
+        protected Void doInBackground(Void... params) {
+            for (int i = 0; i < 4; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            if (mSwipeRefreshLayout.isRefreshing()) {
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        }
+    }
 
     public void clickBackMenu(View view) {
         startActivity(new Intent(PromotionActivity.this, MenuActivity.class));

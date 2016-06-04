@@ -47,7 +47,7 @@
             android:id="@+id/listView"
             android:background="#82ffffff"
             android:layout_marginTop="7dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="10dp" />
     </LinearLayout>
 
     <Button
