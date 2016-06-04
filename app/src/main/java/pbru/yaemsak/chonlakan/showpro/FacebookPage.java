@@ -8,7 +8,6 @@ import android.webkit.WebViewClient;
 
 public class FacebookPage extends AppCompatActivity {
     private WebView mWebView ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
