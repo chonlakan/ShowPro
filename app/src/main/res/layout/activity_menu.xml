@@ -14,7 +14,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="25dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -108,8 +108,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/icon"
-            android:layout_marginTop="15dp" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp" >
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -132,7 +132,8 @@
                 android:id="@+id/textView40"
                 android:layout_weight="1"
                 android:textSize="18sp"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:layout_marginTop="13dp" />
 
         </LinearLayout>
     </LinearLayout>

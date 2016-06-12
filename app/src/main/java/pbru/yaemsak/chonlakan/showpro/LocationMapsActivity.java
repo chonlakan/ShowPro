@@ -206,14 +206,17 @@ public class LocationMapsActivity extends FragmentActivity implements OnMapReady
                     PhoneString[i] = jsonObject.getString("Phone");
 
                     //Create All Marker
+
+                    String Place = String.valueOf(PlaceStrings[i]);
+                    String Phone = String.valueOf(PhoneString[i]);
                     double lat = Double.parseDouble(LatStrings[i]);
                     double lng = Double.parseDouble(LngStrings[i]);
 
                     LatLng latLng = new LatLng(lat, lng);
                     mMap.addMarker(new MarkerOptions()
                             .position(latLng)
-                            .title("Place")
-                            .snippet("Phone")
+                            .title(Place)
+                            .snippet(Phone)
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.mak1)));
 
                 }   //for
@@ -232,9 +235,9 @@ public class LocationMapsActivity extends FragmentActivity implements OnMapReady
 
         mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.getUiSettings().isCompassEnabled();
-        mMap.getUiSettings().setScrollGesturesEnabled(true);
-        mMap.getUiSettings().setMapToolbarEnabled(true);
+        //mMap.getUiSettings().isCompassEnabled();
+        //mMap.getUiSettings().setScrollGesturesEnabled(true);
+        //mMap.getUiSettings().setMapToolbarEnabled(true);
 
         //Setup Center
         LatLng latLng = new LatLng(centerLatADouble, centerLngADouble);
